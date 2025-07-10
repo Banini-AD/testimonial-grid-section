@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+$purple-50: hsl(260, 100%, 95%);
+$purple-300: hsl(264, 82%, 80%);
+$purple-500: hsl(263, 55%, 52%);
+$white: hsl(0, 0%, 100%);
+$grey-100: hsl(214, 17%, 92%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-400: hsl(224, 10%, 45%);
+$grey-500: hsl(217, 19%, 35%);
+$dark-blue: hsl(219, 29%, 14%);
+$black: hsl(0, 0%, 7%);
+$font-weight: (
+    'bold': 600,
+    'regular': 400
+);
+
+@function set-font-weight ($weight){
+    @return map-get($font-weight, $weight);
+}
+
+
+html{
+    font-size: 13px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin display-flex ($flex-direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    
+}
+
+body{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: $purple-50;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-weight: set-font-weight('regular');
+    font-size: 1rem;
+}
+
+@mixin screen-lg {
+    @media  screen and (min-width: 750px) {
+        @content;
+    }
+}
